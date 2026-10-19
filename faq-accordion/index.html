@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Accordion</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="faq-card">
+      <header>
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about the platform and workflow.</p>
+      </header>
+      <div class="accordion-list">
+        <div class="accordion active">
+          <button class="question">
+            <span>What is an FAQ Accordion and how does it work?</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer-wrapper">
+            <div class="answer-inner">
+              <div class="answer">
+                An FAQ accordion is a UI pattern that lets users expand or
+                collapse answers to questions by clicking the header. Under the
+                hood, JavaScript listens for click events and toggles a CSS
+                class (like <code>active</code>) to reveal or hide the
+                corresponding answer panel.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion">
+          <button class="question" aria-expanded="false">
+            <span
+              >How does <code>classList.toggle()</code> help in this
+              project?</span
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer-wrapper">
+            <div class="answer-inner">
+              <div class="answer">
+                <code>classList.toggle()</code> checks if an element already
+                contains a specified class. If it does, it removes it; if it
+                doesn't, it adds it. This makes state switching clean and
+                eliminates manual conditional check blocks like
+                <code>if/else</code> for adding or removing classes.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="question" aria-expanded="false">
+            <span>Can multiple accordion items be open at the same time?</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer-wrapper">
+            <div class="answer-inner">
+              <div class="answer">
+                In this implementation, each item operates independently,
+                allowing you to open or close multiple items simultaneously. If
+                you prefer an exclusive accordion (where opening one
+                automatically closes the others), you can easily loop through
+                all items and remove the <code>active</code> class before
+                toggling the clicked one.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <button class="question" aria-expanded="false">
+            <span>Is this component responsive and accessible?</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"
+              ></path>
+            </svg>
+          </button>
+          <div class="answer-wrapper">
+            <div class="answer-inner">
+              <div class="answer">
+                Yes! The layout uses fluid containers that scale gracefully
+                across mobile screens, tablets, and desktops. The interactive
+                trigger uses semantic <code>&lt;button&gt;</code> tags so it is
+                fully keyboard-accessible out of the box.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
