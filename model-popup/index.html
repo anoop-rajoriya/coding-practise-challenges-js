@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model Popup</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="card main-card">
+      <h1 class="title">Model Dialog Pattern</h1>
+      <p class="desc">
+        A clean, accessible, and animated popup overlay component. Click the
+        button below to test opening and closing.
+      </p>
+      <button class="btn btn-primary btn-open" id="openModelBtn">
+        Open Model Popup
+      </button>
+    </div>
+
+    <div class="model" id="modelOverlay">
+      <div class="card model-dialog" id="modelDialog">
+        <button class="btn-close" id="closeModelBtn">&times;</button>
+        <div class="icon">&#10024;</div>
+        <h2 class="title">Welcome to the Popup</h2>
+        <p class="desc">
+          This modal popup stays centered on screen with a blurred backdrop
+          overlay. You can close it by clicking the X button, the cancel button,
+          pressing the Escape key, or clicking anywhere outside this box.
+        </p>
+        <div class="actions">
+          <button class="btn btn-secondary" id="cancelModelBtn">Cancel</button>
+          <button class="btn btn-primary">Confirm Action</button>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
