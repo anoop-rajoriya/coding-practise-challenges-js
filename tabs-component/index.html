@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs Component</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <div class="tabs">
+        <button data-target="about" data- class="btn active">About</button>
+        <button data-target="skills" class="btn">Skills</button>
+        <button data-target="projects" class="btn">Projects</button>
+      </div>
+      <div class="content-container">
+        <div class="content-panel active" id="about">
+          <h2>Hello i'm Anoop</h2>
+          <p>
+            I am a front-end developer passionate about building clean user
+            interfaces, responsive layouts, and immersive dark-themed web
+            applications. I focus on writing modular code and delivering
+            polished user experiences.
+          </p>
+          <p>
+            When I'm not coding, you can find me exploring typography systems,
+            customization scripts, and open-source design patterns.
+          </p>
+        </div>
+        <div class="content-panel" id="skills">
+          <h2>Core Competencies</h2>
+          <p>
+            Here are the primary technologies and tools I work with on a regular
+            basis to bring web concepts to life:
+          </p>
+          <div class="badge-container">
+            <smaller class="badge">HTML5 & Semantic Markup</smaller>
+            <smaller class="badge">CSS Custom Properties</smaller>
+            <smaller class="badge">JavaScript (ES6+)</smaller>
+            <smaller class="badge">DOM Manipulation</smaller>
+            <smaller class="badge">Git & Version Control</smaller>
+            <smaller class="badge">Responsive design</smaller>
+          </div>
+        </div>
+        <div class="content-panel" id="projects">
+          <h2>Featured Work</h2>
+          <p>
+            A selection of recent interactive front-end components built from
+            scratch:
+          </p>
+          <div class="project-preview">
+            <div class="info">
+              <h3>immersive Image Galary</h3>
+              <p>
+                Dynamic thumbnail lightbox with array mapping and navigation.
+              </p>
+            </div>
+            <a href="" class="link">View Demo -></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
