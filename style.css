@@ -1,0 +1,367 @@
+:root {
+  /* Core Starter Variables */
+  --color-main: #09090b;
+  --color-invert: #fafafa;
+  --text-base: 1rem;
+  --font-bold: 600;
+
+  /* Extended Theme Palette */
+  --color-surface: #121216;
+  --color-card: #18181b;
+  --color-card-hover: #222227;
+  --color-text-muted: #a1a1aa;
+  --color-accent: #6366f1;
+  --color-accent-glow: rgba(99, 102, 241, 0.16);
+  --color-border: #27272a;
+  --color-border-hover: #4f46e5;
+
+  /* Layout & Radius */
+  --radius-outer: 1.5rem;
+  --radius-inner: 0.875rem;
+  --header-height: 4.5rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* Locks full page scroll on desktop so only the project box scrolls */
+
+  background-color: var(--color-main);
+  background-image: radial-gradient(
+    circle at 15% 50%,
+    rgba(99, 102, 241, 0.07),
+    transparent 45%
+  );
+  color: var(--color-invert);
+  font-size: var(--text-base);
+  font-weight: 400;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1520px;
+  padding-inline: 2rem;
+  margin-inline: auto;
+}
+
+header,
+main {
+  display: flex;
+}
+
+/* ==================== Header ==================== */
+.header {
+  height: var(--header-height);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  backdrop-filter: blur(8px);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  color: var(--color-invert);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__logo::before {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 10px var(--color-accent);
+}
+
+.header__repo {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  transition: all 0.2s ease;
+}
+
+.header__repo:hover {
+  color: var(--color-invert);
+  border-color: var(--color-border-hover);
+  background-color: var(--color-card-hover);
+}
+
+/* ==================== Main Layout ==================== */
+.main {
+  flex: 1;
+  min-height: 0; /* Critical for nested flex scrolling */
+  padding-block: 2.5rem;
+}
+
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 3.5rem;
+  align-items: center;
+  height: 100%;
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 540px;
+}
+
+.hero__badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #818cf8;
+  background-color: var(--color-accent-glow);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.desc {
+  color: var(--color-text-muted);
+  font-size: clamp(0.95rem, 1.1vw, 1.125rem);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* ==================== Scrollable Projects Box ==================== */
+.projects-wrapper {
+  height: 100%;
+  max-height: 620px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-outer);
+  padding: 1.5rem;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+
+  /* Smooth Custom Scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.projects-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.projects-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projects-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 999px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* ==================== Project Card ==================== */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 16 / 10;
+  padding: 1.25rem;
+  border-radius: var(--radius-inner);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-invert);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Background Preview Image with Mask Overlay */
+.project-card__preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.22;
+  z-index: -2;
+  transition:
+    transform 0.4s ease,
+    opacity 0.3s ease;
+  filter: saturate(0.85);
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(9, 9, 11, 0.45) 0%,
+    rgba(9, 9, 11, 0.92) 100%
+  );
+  z-index: -1;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border-hover);
+  box-shadow: 0 12px 28px -8px var(--color-accent-glow);
+}
+
+.project-card:hover .project-card__preview {
+  transform: scale(1.06);
+  opacity: 0.4;
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Top Arrow (`->` in wireframe) */
+.project-card__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  background-color: rgba(24, 24, 27, 0.75);
+  border: 1px solid var(--color-border);
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  backdrop-filter: blur(4px);
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-card:hover .project-card__arrow {
+  color: var(--color-invert);
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+}
+
+/* Bottom Project Title */
+.project-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.project-card__number {
+  font-size: 0.7rem;
+  font-family: monospace;
+  color: #818cf8;
+  letter-spacing: 0.06em;
+}
+
+.project-card__title {
+  font-size: 1.05rem;
+  font-weight: var(--font-bold);
+  letter-spacing: -0.01em;
+}
+
+/* ==================== Responsive Breakpoints ==================== */
+@media (max-width: 960px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .container {
+    padding-inline: 1.25rem;
+  }
+
+  .main {
+    padding-block: 2rem;
+  }
+
+  .main__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero {
+    max-width: 100%;
+  }
+
+  /* Matches the mobile wireframe with a bounded scrollable container */
+  .projects-wrapper {
+    max-height: 460px;
+    padding: 1rem;
+  }
+
+  .projects {
+    gap: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 0.875rem;
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-card__arrow {
+    width: 1.85rem;
+    height: 1.85rem;
+    font-size: 0.85rem;
+  }
+
+  .project-card__title {
+    font-size: 0.9rem;
+  }
+}

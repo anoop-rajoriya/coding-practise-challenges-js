@@ -4,9 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla JS Simple DOM Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="container header__container">
+        <a href="./index.html" class="header__logo">DOM Challenges</a>
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="header__repo"
+        >
+          Repository <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container main__container">
+        <div class="hero">
+          <span class="hero__badge">Vanilla JS Collection</span>
+          <h1 class="title">JavaScript DOM Practice Challenges</h1>
+          <p class="desc">
+            A structured index of practical vanilla JavaScript DOM manipulation
+            projects. Explore live previews, inspect code structures, and test
+            browser interactions directly.
+          </p>
+        </div>
+
+        <!-- Scrollable outer wrapper matching the wireframe -->
+        <section class="projects-wrapper" aria-label="Projects Index">
+          <div class="projects" id="projects-grid"></div>
+        </section>
+      </div>
+    </main>
+
     <script src="./script.js"></script>
   </body>
 </html>
