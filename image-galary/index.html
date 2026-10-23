@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Galary</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="galary-card">
+      <div class="display-stage" id="displayStage">
+        <div class="caption-bar">
+          <h2 class="caption-title" id="captionTitle"></h2>
+          <p class="caption-desc" id="captionDesc"></p>
+        </div>
+        <button class="nav-control prev" id="prevBtn">
+          <i class="ri-arrow-left-s-fill"></i>
+        </button>
+        <button class="nav-control next" id="nextBtn">
+          <i class="ri-arrow-right-s-fill"></i>
+        </button>
+      </div>
+      <div class="thumbnail-strip" id="thumbnailStrip"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
